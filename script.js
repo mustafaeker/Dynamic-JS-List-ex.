@@ -15,15 +15,48 @@ list.innerHTML=html;
 
 **************************************************/
 
- var items = ['work todo 1','work todo 2','work todo 3','work todo 4'];
-
-var list = document.querySelector('#old-list');
 
 
-items.forEach(function(item){
+/***************** DAILY DYNAMIC TO DO LIST ************************************/
+
+/******* DEFINE DEFAULT DAILY TODOS  **********/ 
+
+var items = ['work todo 1', 'work todo 2', 'work todo 3', 'work todo 4'];
+
+/******* DEFINE DEFAULT DAILY TODOS  *********
+var myspandate = document.querySelector('#date');
+
+    var date = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+    var myspantext = date.getDate();
+var myspandate = date.getDate();*/ 
+
+
+/******* CRETAE A TODO FOR LIST  **********/ 
+
+var list = document.querySelector('#mylist');
+
+items.forEach(function (item){
     
-    var li =document.createElement('li');
-    var t =document.createTextNode(item);
+    CretaeItem(item);
+});
+
+
+
+document.querySelector('#add').onclick=function(){
+    
+  var item = document.querySelector('#txtItem').value;
+   
+    
+    if((item==='') || (item==0)){
+     alert('Nothing to Do !');
+        return;
+    }
+    CretaeItem(item);
+};
+
+function CretaeItem(item){
+    var li = document.createElement('li');
+    var t = document.createTextNode(item);
     var span = document.createElement('span');
     var spantext = document.createTextNode ('\u00D7');
     
@@ -33,20 +66,50 @@ items.forEach(function(item){
     span.classList.add('close');
     span.appendChild(spantext);
     li.appendChild(span);
+      
+    span.onclick = function () {
+        var li = this.parentElement;
+        li.style.display='none';  
+        li.classList.remove('checked');   
+    }
+};
+
+
+
+/******* MAKES A TODO'S STATE "COMPLETED" **********/ 
+
+list.addEventListener('click',function(item){
+    
+    if(item.target.tagName=='LI'){
+        item.target.classList.toggle('checked');
+        ToggleDeleteButton();
+        
+    }
     
 });
 
 
-list.addEventListener('click',function(item){
+document.querySelector('#deleteAll').onclick=function(){
+  
+    var elements = document.querySelector('.checked');
     
-    if(item.target.tagName='li'){
-        item.target.classList.toggle('checked');
+    elements.forEach(function(item){
+        item.style.display='none'
+    })
+};
+
+
+
+function ToggleDeleteButton(){
+  var checklist = document.querySelectorAll('.list-group-item.checked');
+    
+    if(checklist.length>0){
+        document.querySelector('#deleteAll').classList.remove('.d-none');
         
+    }else{
+         document.querySelector('#deleteAll').classList.add('.d-none');
     }
-    
-})
-
-
+};
 
 
 
