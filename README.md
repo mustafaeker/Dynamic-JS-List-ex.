@@ -16,10 +16,9 @@ JS - Dunamic List Exercise
 <br><br>
 * Editing "script.js" routine "To Do"s can be delared automaticly at each refresh.
 <br><br>
+![alt text](https://raw.githubusercontent.com/mustafaeker/Dynamic-JS-List-ex./master/read-me.png)
 <br><br>
------------------------
-<br><br>
-In Schedule:
+# In Schedule:
 <br><br>
 1-blue focus border will be deleted.
 <br><br>
@@ -30,4 +29,5 @@ In Schedule:
 4-After "Add" click input text will be cleaned auto.
 <br><br>
 5- ... any more suggestion ?
-![alt text](https://raw.githubusercontent.com/mustafaeker/Dynamic-JS-List-ex./master/read-me.png)
+<br><br>
+-----------------------
