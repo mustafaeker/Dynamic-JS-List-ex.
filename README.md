@@ -30,4 +30,4 @@ In Schedule:
 4-After "Add" click input text will be cleaned auto.
 <br><br>
 5- ... any more suggestion ?
-![alt text](https://raw.githubusercontent.com/mustafaeker/Dynamic-JS-List-ex./blob/master/read-me.png)
+![alt text](https://raw.githubusercontent.com/mustafaeker/Dynamic-JS-List-ex./master/read-me.png)
